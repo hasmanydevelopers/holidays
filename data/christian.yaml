@@ -1,0 +1,21 @@
+# Christian holiday definitions for the Ruby Holiday gem.
+# Updated: 2011-08-17.
+--- 
+months:
+  0:
+  - name: Palm Sunday
+    regions: [christian]
+    function: easter(year)-7 
+  - name: Good Friday
+    regions: [christian]
+    function: easter(year)-2
+  - name: Easter
+    regions: [christian]
+    function: easter(year)
+  12:
+  - name: Christmas Day
+    regions: [christian]
+    mday: 25
+    
+tests: |
+    assert_equal 'Easter', Date.civil(2024, 04, 24).holidays(:cristian)[0][:name]
