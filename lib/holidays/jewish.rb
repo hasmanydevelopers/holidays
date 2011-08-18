@@ -53,7 +53,7 @@ def self.passover( year )
   n = rh.mday
   n += 30 if rh.month == 10
 
-  d = Date.civil( year, 3, 21 )
+  d = Date.civil( year+1, 3, 21 )
   d += (n-1)
   d
 end
