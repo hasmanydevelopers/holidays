@@ -15,12 +15,12 @@ module Holidays
     DEFINED_REGIONS = [:gb, :gb_sct, :gb_con, :gb_nir, :je, :gb_jsy, :gg, :gb_gsy, :im, :gb_iom, :gb_eng, :gb_wls, :gb_eaw]
 
     HOLIDAYS_BY_MONTH = {
+      0 => [{:function => lambda { |year| Holidays.easter(year)-21 }, :function_id => "easter(year)-21", :name => "Mother's Day", :regions => [:gb]}],
       1 => [{:mday => 1, :name => "New Year's Day", :regions => [:gb]},
             {:mday => 2, :name => "New Year's", :regions => [:gb_sct]}],
       3 => [{:mday => 5, :name => "St. Piran's Day", :regions => [:gb_con]},
             {:mday => 17, :name => "St. Patrick's Day", :regions => [:gb_nir]}],
-      5 => [{:wday => 0, :week => 2, :name => "Mother's Day", :regions => [:gb]},
-            {:wday => 1, :week => 1, :name => "May Day", :regions => [:gb]},
+      5 => [{:wday => 1, :week => 1, :name => "May Day", :regions => [:gb]},
             {:mday => 9, :name => "Liberation Day", :regions => [:je, :gb_jsy, :gg, :gb_gsy]},
             {:wday => 1, :week => -1, :name => "Bank Holiday", :regions => [:gb]}],
       6 => [{:wday => 0, :week => 3, :name => "Father's Day", :regions => [:gb]}],

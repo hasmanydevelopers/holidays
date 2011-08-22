@@ -12,6 +12,10 @@
 # - England and Wales together should be encoded as [gb_eng, gb_wls, gb_eaw...]
 --- 
 months:
+  0:
+  - name: Mother's Day
+    regions: [gb]
+    function: easter(year)-21
   1: 
   - name: New Year's Day
     regions: [gb]
@@ -27,10 +31,6 @@ months:
     regions: [gb_nir]
     mday: 17
   5: 
-  - name: Mother's Day
-    week: 2
-    regions: [gb]
-    wday: 0
   - name: May Day
     regions: [gb]
     week: 1
