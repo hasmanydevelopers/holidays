@@ -27,10 +27,19 @@ months:
     regions: [us]
     wday: 1
   5: 
+  - name: Mother's Day
+    week: 2
+    regions: [us]
+    wday: 0
   - name: Memorial Day
     week: -1
     regions: [us]
     wday: 1
+  6: 
+  - name: Father's Day
+    week: 3
+    regions: [us]
+    wday: 0
   7: 
   - name: Independence Day
     regions: [us]
@@ -46,11 +55,10 @@ months:
     week: 2
     regions: [us]
     wday: 1
-  11: 
-  - name: Veterans Day
+  - name: Halloween
     regions: [us]
-    mday: 11
-    observed: to_weekday_if_weekend
+    mday: 31
+  11: 
   - name: Thanksgiving
     week: 4
     regions: [us]
@@ -60,6 +68,12 @@ months:
     regions: [us]
     mday: 25
     observed: to_weekday_if_weekend
+  - name: Kwanzaa
+    regions: [us]
+    mday: 26
+  - name: New Year's Eve
+    regions: [us]
+    mday: 31
 methods:
   us_inauguration_day: |
     # January 20, every fourth year, following Presidential election
