@@ -32,5 +32,6 @@ assert_equal 'Labour Day', Date.civil(2007,5,7).holidays(:au_qld)[0][:name]
 assert_equal 'May Day', Date.civil(2007,5,7).holidays(:au_nt)[0][:name]
 
 assert_equal 'Eight Hours Day', Date.civil(2007,3,12).holidays(:au_tas)[0][:name]
+
   end
 end

@@ -7,19 +7,6 @@
 # TODO: missing some regional holidays
 --- 
 months:
-  0: 
-  - name: Good Friday
-    regions: [au]
-    function: easter(year)-2
-  - name: Easter Saturday
-    regions: [au]
-    function: easter(year)-1
-  - name: Easter Monday
-    regions: [au]
-    function: easter(year)+1
-  - name: Easter Monday
-    regions: [au_tas]
-    function: easter(year)+2
   1: 
   - name: New Year's Day
     regions: [au]
@@ -45,6 +32,10 @@ months:
     regions: [au]
     mday: 25
   5: 
+  - name: Mother's Day
+    week: 2
+    regions: [au]
+    wday: 0
   - name: Labour Day
     regions: [au_qld]
     week: 1
@@ -54,6 +45,10 @@ months:
     week: 1
     wday: 1
   6: 
+  - name: Father's Day
+    week: 3
+    regions: [au]
+    wday: 0
   - name: Foundation Day
     regions: [au_wa]
     week: 1
@@ -77,9 +72,6 @@ months:
     week: 1
     wday: 1
   12: 
-  - name: Christmas Day
-    regions: [au]
-    mday: 25
   - name: Boxing Day
     regions: [au]
     mday: 26

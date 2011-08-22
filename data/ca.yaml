@@ -2,14 +2,6 @@
 # Updated 2008-11-21.
 --- 
 months:
-  0: 
-  - name: Good Friday
-    regions: [ca]
-    function: easter(year)-2
-  - name: Easter Monday
-    regions: [ca]
-    function: easter(year)+1
-    type: informal
   1: 
   - name: New Year's Day
     regions: [ca]
@@ -35,6 +27,10 @@ months:
     regions: [ca_nf]
     mday: 23
   5: 
+  - name: Mother's Day
+    week: 2
+    regions: [ca]
+    wday: 0
   - name: Victoria Day
     regions: [ca]
     function: ca_victoria_day(year)
@@ -42,6 +38,10 @@ months:
     regions: [ca_qc]
     function: ca_victoria_day(year)
   6: 
+  - name: Father's Day
+    week: 3
+    regions: [ca]
+    wday: 0
   - name: Discovery Day
     regions: [ca_nf]
     mday: 24
@@ -97,14 +97,11 @@ months:
     week: 2
     regions: [ca]
     wday: 1
-  11: 
-  - name: Remembrance Day
-    regions: [ca]
-    mday: 11
+#  11: 
+#  - name: Remembrance Day
+#    regions: [ca]
+#    mday: 11
   12: 
-  - name: Christmas Day
-    regions: [ca]
-    mday: 25
   - name: Boxing Day
     regions: [ca]
     mday: 26
@@ -122,7 +119,6 @@ methods:
     end
 tests: |
     {Date.civil(2008,1,1) => 'New Year\'s Day', 
-     Date.civil(2008,3,21) => 'Good Friday', 
      Date.civil(2008,3,24) => 'Easter Monday',
      Date.civil(2008,5,19) => 'Victoria Day',
      Date.civil(2008,7,1) => 'Canada Day',

@@ -64,10 +64,6 @@ months:
     regions: [us]
     wday: 4
   12: 
-  - name: Christmas Day
-    regions: [us]
-    mday: 25
-    observed: to_weekday_if_weekend
   - name: Kwanzaa
     regions: [us]
     mday: 26

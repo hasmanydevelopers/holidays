@@ -8,10 +8,8 @@ class GbDefinitionTests < Test::Unit::TestCase  # :nodoc:
 
   def test_gb
 {Date.civil(2008,1,1) => 'New Year\'s Day', 
- Date.civil(2008,3,21) => 'Good Friday',
- Date.civil(2008,3,23) => 'Easter Sunday',
  Date.civil(2008,5,5) => 'May Day',
- Date.civil(2008,5,26) => 'Bank Holiday',
+ Date.civil(2008,5,26) => 'Spring Bank Holiday',
  Date.civil(2008,11,5) => 'Guy Fawkes Day',
  Date.civil(2008,12,25) => 'Christmas Day',
  Date.civil(2008,12,26) => 'Boxing Day'}.each do |date, name|
@@ -32,5 +30,6 @@ assert_equal 'Boxing Day', Date.civil(2010,12,28).holidays(:gb_, :observed)[0][:
   assert_equal 'Easter Monday', Date.civil(2008,3,24).holidays(r)[0][:name]
   assert_equal 'Bank Holiday', Date.civil(2008,8,25).holidays(r)[0][:name]
 end
+
   end
 end

@@ -12,7 +12,7 @@ module Holidays
   #
   # More definitions are available at http://code.dunae.ca/holidays.
   module Europe # :nodoc:
-    DEFINED_REGIONS = [:cz, :dk, :no, :de, :de_bw, :de_by, :de_nw, :de_rp, :de_sl, :de_sn, :de_he, :de_st, :de_bb, :de_mv, :de_th, :es, :es_m, :es_cn, :es_cm, :es_pv, :es_ct, :es_na, :es_v, :es_vc, :es_mu, :es_lo, :es_ib, :es_ga, :es_an, :es_ce, :es_o, :es_ex, :es_ar, :es_cl, :fr, :gb, :ie, :je, :gb_jsy, :gg, :gb_gsy, :gb_eng, :gb_wls, :gb_eaw, :gb_nir, :gb_sct, :im, :gb_iom, :gb_con, :is, :it, :nl, :pt]
+    DEFINED_REGIONS = [:cz, :dk, :no, :de, :de_bw, :de_by, :de_nw, :de_rp, :de_sl, :de_sn, :de_he, :de_st, :de_bb, :de_mv, :de_th, :es, :es_m, :es_cn, :es_cm, :es_pv, :es_ct, :es_na, :es_v, :es_vc, :es_mu, :es_lo, :es_ib, :es_ga, :es_an, :es_ce, :es_o, :es_ex, :es_ar, :es_cl, :fr, :gb, :ie, :je, :gb_jsy, :gg, :gb_gsy, :gb_sct, :im, :gb_iom, :gb_nir, :gb_eng, :gb_wls, :gb_eaw, :gb_con, :is, :it, :nl, :pt]
 
     HOLIDAYS_BY_MONTH = {
       5 => [{:mday => 1, :name => "Svátek práce", :regions => [:cz]},
@@ -26,6 +26,7 @@ module Holidays
             {:mday => 31, :name => "Día de la Región Castilla-La Mancha", :regions => [:es_cm]},
             {:mday => 1, :name => "Fête du travail", :regions => [:fr]},
             {:mday => 8, :name => "Victoire 1945", :regions => [:fr]},
+            {:wday => 0, :week => 2, :name => "Mother's Day", :regions => [:gb]},
             {:wday => 1, :week => 1, :name => "May Day", :regions => [:gb, :ie]},
             {:mday => 9, :name => "Liberation Day", :regions => [:je, :gb_jsy, :gg, :gb_gsy]},
             {:wday => 1, :week => -1, :name => "Bank Holiday", :regions => [:gb]},
@@ -61,9 +62,7 @@ module Holidays
             {:function => lambda { |year| Holidays.easter(year)+39 }, :function_id => "easter(year)+39", :name => "Ascension", :regions => [:fr]},
             {:function => lambda { |year| Holidays.easter(year)+49 }, :function_id => "easter(year)+49", :name => "Pentecôte", :regions => [:fr]},
             {:function => lambda { |year| Holidays.easter(year)+50 }, :function_id => "easter(year)+50", :name => "Lundi de Pentecôte", :regions => [:fr]},
-            {:function => lambda { |year| Holidays.easter(year)-2 }, :function_id => "easter(year)-2", :name => "Good Friday", :regions => [:gb]},
-            {:function => lambda { |year| Holidays.easter(year) }, :function_id => "easter(year)", :name => "Easter Sunday", :regions => [:gb]},
-            {:function => lambda { |year| Holidays.easter(year)+1 }, :function_id => "easter(year)+1", :name => "Easter Monday", :regions => [:gb_eng, :gb_wls, :gb_eaw, :gb_nir, :ie]},
+            {:function => lambda { |year| Holidays.easter(year)+1 }, :function_id => "easter(year)+1", :name => "Easter Monday", :regions => [:ie]},
             {:function => lambda { |year| Holidays.easter(year)-48 }, :function_id => "easter(year)-48", :name => "Bolludagur", :regions => [:is]},
             {:function => lambda { |year| Holidays.easter(year)-47 }, :function_id => "easter(year)-47", :name => "Sprengidagur", :regions => [:is]},
             {:function => lambda { |year| Holidays.easter(year)-46 }, :function_id => "easter(year)-46", :name => "Öskudagur", :regions => [:is]},
@@ -107,6 +106,7 @@ module Holidays
             {:mday => 23, :type => :informal, :name => "Sankt Hans aften", :regions => [:dk]},
             {:mday => 9, :name => "Día de la Región de Murcia", :regions => [:es_mu]},
             {:mday => 9, :name => "Día de La Rioja", :regions => [:es_lo]},
+            {:wday => 0, :week => 3, :name => "Father's Day", :regions => [:gb]},
             {:wday => 1, :week => 1, :name => "Bank Holiday", :regions => [:ie]},
             {:mday => 3, :type => :informal, :name => "Sjómannadagurinn", :regions => [:is]},
             {:mday => 17, :name => "Lýðveldisdagurinn", :regions => [:is]},
@@ -143,7 +143,6 @@ module Holidays
             {:mday => 25, :name => "Navidad del Señor", :regions => [:es]},
             {:mday => 26, :name => "San Esteban", :regions => [:es_ib, :es_ct]},
             {:mday => 25, :name => "Nöel", :regions => [:fr]},
-            {:mday => 25, :observed => lambda { |date| Holidays.to_monday_if_weekend(date) }, :observed_id => "to_monday_if_weekend", :name => "Christmas Day", :regions => [:gb]},
             {:mday => 26, :observed => lambda { |date| Holidays.to_weekday_if_boxing_weekend(date) }, :observed_id => "to_weekday_if_boxing_weekend", :name => "Boxing Day", :regions => [:gb]},
             {:mday => 25, :name => "Christmas Day", :regions => [:ie]},
             {:mday => 26, :name => "St. Stephen's Day", :regions => [:ie]},
@@ -173,8 +172,9 @@ module Holidays
       8 => [{:mday => 15, :name => "Mariä Himmelfahrt", :regions => [:de_by, :de_sl]},
             {:mday => 15, :name => "Asunción", :regions => [:es]},
             {:mday => 15, :name => "Assomption", :regions => [:fr]},
-            {:wday => 1, :week => 1, :name => "Bank Holiday", :regions => [:gb_sct, :ie]},
-            {:wday => 1, :week => -1, :name => "Bank Holiday", :regions => [:gb_eng, :gb_wls, :gb_eaw, :gb_nir]},
+            {:wday => 1, :week => 1, :name => "Spring Bank Holiday", :regions => [:gb_sct]},
+            {:wday => 1, :week => -1, :name => "Spring Bank Holiday", :regions => [:gb_eng, :gb_wls, :gb_eaw, :gb_nir]},
+            {:wday => 1, :week => 1, :name => "Bank Holiday", :regions => [:ie]},
             {:wday => 1, :week => 1, :name => "Frídagur verslunarmanna", :regions => [:is]},
             {:mday => 15, :name => "Assunzione", :regions => [:it]},
             {:mday => 15, :name => "Assunção de Nossa Senhora", :regions => [:pt]}],

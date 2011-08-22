@@ -17,11 +17,11 @@ months:
     
   - name: Shemini Atzeret
     regions: [jewish]
-    function: rosh_hashanah(year)+15
+    function: rosh_hashanah(year)+21
     
   - name: Simchat Torah
     regions: [jewish]
-    function: rosh_hashanah(year)+16
+    function: rosh_hashanah(year)+22
     
   - name: Chanukah
     regions: [jewish]
@@ -35,10 +35,6 @@ months:
   - name: Festival of Lots (Purim)
     regions: [jewish]
     mday: 20
-  5:
-  - name: Israel Independence Day
-    regions: [jewish]
-    mday: 10
     
 tests: |
     assert_equal true, true

@@ -15,10 +15,11 @@ module Holidays
     DEFINED_REGIONS = [:christian]
 
     HOLIDAYS_BY_MONTH = {
-      0 => [{:function => lambda { |year| Holidays.easter(year)-7 }, :function_id => "easter(year)-7", :name => "Palm Sunday", :regions => [:christian]},
+      0 => [{:function => lambda { |year| Holidays.easter(year)+1 }, :function_id => "easter(year)+1", :name => "Easter Monday", :regions => [:christian]},
             {:function => lambda { |year| Holidays.easter(year)-2 }, :function_id => "easter(year)-2", :name => "Good Friday", :regions => [:christian]},
-            {:function => lambda { |year| Holidays.easter(year) }, :function_id => "easter(year)", :name => "Easter", :regions => [:christian]}],
-      12 => [{:mday => 25, :name => "Christmas Day", :regions => [:christian]}]
+            {:function => lambda { |year| Holidays.easter(year) }, :function_id => "easter(year)", :name => "Easter Sunday", :regions => [:christian]}],
+      12 => [{:mday => 25, :name => "Christmas Eve", :regions => [:christian]},
+            {:mday => 25, :name => "Christmas Day", :regions => [:christian]}]
     }
   end
 

@@ -8,7 +8,6 @@ class CaDefinitionTests < Test::Unit::TestCase  # :nodoc:
 
   def test_ca
 {Date.civil(2008,1,1) => 'New Year\'s Day', 
- Date.civil(2008,3,21) => 'Good Friday', 
  Date.civil(2008,3,24) => 'Easter Monday',
  Date.civil(2008,5,19) => 'Victoria Day',
  Date.civil(2008,7,1) => 'Canada Day',
@@ -25,5 +24,6 @@ end
  Date.civil(2007,5,21), Date.civil(2008,5,19)].each do |date|
   assert_equal 'Victoria Day', Holidays.on(date, :ca)[0][:name]
 end
+
   end
 end

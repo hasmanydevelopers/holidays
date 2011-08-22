@@ -12,16 +12,6 @@
 # - England and Wales together should be encoded as [gb_eng, gb_wls, gb_eaw...]
 --- 
 months:
-  0: 
-  - name: Good Friday
-    regions: [gb]
-    function: easter(year)-2
-  - name: Easter Sunday
-    regions: [gb]
-    function: easter(year)
-  - name: Easter Monday
-    regions: [gb_eng, gb_wls, gb_eaw, gb_nir]
-    function: easter(year)+1
   1: 
   - name: New Year's Day
     regions: [gb]
@@ -37,6 +27,10 @@ months:
     regions: [gb_nir]
     mday: 17
   5: 
+  - name: Mother's Day
+    week: 2
+    regions: [gb]
+    wday: 0
   - name: May Day
     regions: [gb]
     week: 1
@@ -48,6 +42,11 @@ months:
     regions: [gb]
     week: -1
     wday: 1
+  6:
+  - name: Father's Day
+    week: 3
+    regions: [gb]
+    wday: 0
   7: 
   - name: Tynwald Day
     regions: [im, gb_iom]
@@ -56,11 +55,11 @@ months:
     regions: [gb_nir]
     mday: 12
   8: 
-  - name: Bank Holiday
+  - name: Spring Bank Holiday
     regions: [gb_sct]
     week: 1
     wday: 1
-  - name: Bank Holiday
+  - name: Spring Bank Holiday
     regions: [gb_eng, gb_wls, gb_eaw, gb_nir]
     week: -1
     wday: 1
@@ -70,20 +69,14 @@ months:
     mday: 5
     type: informal
   12: 
-  - name: Christmas Day
-    regions: [gb]
-    mday: 25
-    observed: to_monday_if_weekend
   - name: Boxing Day
     regions: [gb]
     mday: 26
     observed: to_weekday_if_boxing_weekend
 tests: |
     {Date.civil(2008,1,1) => 'New Year\'s Day', 
-     Date.civil(2008,3,21) => 'Good Friday',
-     Date.civil(2008,3,23) => 'Easter Sunday',
      Date.civil(2008,5,5) => 'May Day',
-     Date.civil(2008,5,26) => 'Bank Holiday',
+     Date.civil(2008,5,26) => 'Spring Bank Holiday',
      Date.civil(2008,11,5) => 'Guy Fawkes Day',
      Date.civil(2008,12,25) => 'Christmas Day',
      Date.civil(2008,12,26) => 'Boxing Day'}.each do |date, name|

@@ -3,16 +3,19 @@
 --- 
 months:
   0:
-  - name: Palm Sunday
+  - name: Easter Monday
     regions: [christian]
-    function: easter(year)-7 
+    function: easter(year)+1
   - name: Good Friday
     regions: [christian]
     function: easter(year)-2
-  - name: Easter
+  - name: Easter Sunday
     regions: [christian]
     function: easter(year)
   12:
+  - name: Christmas Eve
+    regions: [christian]
+    mday: 25
   - name: Christmas Day
     regions: [christian]
     mday: 25
