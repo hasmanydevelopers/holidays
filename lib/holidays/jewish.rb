@@ -16,7 +16,7 @@ module Holidays
 
     HOLIDAYS_BY_MONTH = {
       0 => [{:function => lambda { |year| Holidays.rosh_hashanah(year) }, :function_id => "rosh_hashanah(year)", :name => "New Year (Rosh Hashanah)", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+9 }, :function_id => "rosh_hashanah(year)+9", :name => "Day of atonement (Yom Kippur)", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+9 }, :function_id => "rosh_hashanah(year)+9", :name => "Day of Atonement (Yom Kippur)", :regions => [:jewish]},
             {:function => lambda { |year| Holidays.rosh_hashanah(year)+14 }, :function_id => "rosh_hashanah(year)+14", :name => "Sukkot", :regions => [:jewish]},
             {:function => lambda { |year| Holidays.rosh_hashanah(year)+21 }, :function_id => "rosh_hashanah(year)+21", :name => "Shemini Atzeret", :regions => [:jewish]},
             {:function => lambda { |year| Holidays.rosh_hashanah(year)+22 }, :function_id => "rosh_hashanah(year)+22", :name => "Simchat Torah", :regions => [:jewish]},

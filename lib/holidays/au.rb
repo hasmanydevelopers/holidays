@@ -12,9 +12,15 @@ module Holidays
   #
   # More definitions are available at http://code.dunae.ca/holidays.
   module AU # :nodoc:
-    DEFINED_REGIONS = [:au, :au_qld, :au_nt, :au_wa, :au_act, :au_nsw, :au_sa, :au_tas, :au_vic, :au_qld_brisbane]
+    DEFINED_REGIONS = [:au, :au_wa, :au_tas, :au_vic, :au_qld, :au_nt, :au_act, :au_nsw, :au_sa, :au_qld_brisbane]
 
     HOLIDAYS_BY_MONTH = {
+      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:au]},
+            {:mday => 26, :name => "Australia Day", :regions => [:au]}],
+      3 => [{:wday => 1, :week => 1, :name => "Labour Day", :regions => [:au_wa]},
+            {:wday => 1, :week => 2, :name => "Eight Hours Day", :regions => [:au_tas]},
+            {:wday => 1, :week => 2, :name => "Labour Day", :regions => [:au_vic]}],
+      4 => [{:mday => 25, :name => "ANZAC Day", :regions => [:au]}],
       5 => [{:wday => 0, :week => 2, :name => "Mother's Day", :regions => [:au]},
             {:wday => 1, :week => 1, :name => "Labour Day", :regions => [:au_qld]},
             {:wday => 1, :week => 1, :name => "May Day", :regions => [:au_nt]}],
@@ -22,15 +28,9 @@ module Holidays
             {:wday => 1, :week => 1, :name => "Foundation Day", :regions => [:au_wa]},
             {:wday => 1, :week => 2, :name => "Queen's Birthday", :regions => [:au_act, :au_nsw, :au_sa, :au_tas, :au_nt, :au_qld, :au_vic]},
             {:mday => 6, :type => :informal, :name => "Queensland Day", :regions => [:au_qld]}],
-      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:au]},
-            {:mday => 26, :name => "Australia Day", :regions => [:au]}],
-      12 => [{:mday => 26, :name => "Boxing Day", :regions => [:au]}],
       8 => [{:wday => 3, :week => -3, :name => "Ekka", :regions => [:au_qld_brisbane]}],
-      3 => [{:wday => 1, :week => 1, :name => "Labour Day", :regions => [:au_wa]},
-            {:wday => 1, :week => 2, :name => "Eight Hours Day", :regions => [:au_tas]},
-            {:wday => 1, :week => 2, :name => "Labour Day", :regions => [:au_vic]}],
-      4 => [{:mday => 25, :name => "ANZAC Day", :regions => [:au]}],
-      10 => [{:wday => 1, :week => 1, :name => "Labour Day", :regions => [:au_act, :au_nsw, :au_sa]}]
+      10 => [{:wday => 1, :week => 1, :name => "Labour Day", :regions => [:au_act, :au_nsw, :au_sa]}],
+      12 => [{:mday => 26, :name => "Boxing Day", :regions => [:au]}]
     }
   end
 

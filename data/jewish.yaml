@@ -7,7 +7,7 @@ months:
     regions: [jewish]
     function: rosh_hashanah(year)
     
-  - name: Day of atonement (Yom Kippur)
+  - name: Day of Atonement (Yom Kippur)
     regions: [jewish]
     function: rosh_hashanah(year)+9
     
