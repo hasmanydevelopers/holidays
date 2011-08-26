@@ -11,9 +11,11 @@ months:
   - name: New Year's Day
     regions: [au]
     mday: 1
+    logic: January 1st
   - name: Australia Day
     regions: [au]
     mday: 26
+    logic: January 26th
   3: 
   - name: Labour Day
     regions: [au_wa]
@@ -31,11 +33,13 @@ months:
   - name: ANZAC Day
     regions: [au]
     mday: 25
+    logic: April 25th
   5: 
   - name: Mother's Day
     week: 2
     regions: [au]
     wday: 0
+    logic: 2nd Sunday in May
   - name: Labour Day
     regions: [au_qld]
     week: 1
@@ -67,6 +71,7 @@ months:
     week: 1
     regions: [au]
     wday: 0
+    logic: 1st Sunday in September
   10: 
   - name: Labour Day
     regions: [au_act, au_nsw, au_sa]
@@ -76,6 +81,7 @@ months:
   - name: Boxing Day
     regions: [au]
     mday: 26
+    logic: December 26th
 tests: |
     {Date.civil(2007,1,1) => 'New Year\'s Day', 
      Date.civil(2007,1,26) => 'Australia Day', 

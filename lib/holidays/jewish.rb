@@ -15,14 +15,13 @@ module Holidays
     DEFINED_REGIONS = [:jewish]
 
     HOLIDAYS_BY_MONTH = {
-      0 => [{:function => lambda { |year| Holidays.rosh_hashanah(year) }, :function_id => "rosh_hashanah(year)", :name => "New Year (Rosh Hashanah)", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+9 }, :function_id => "rosh_hashanah(year)+9", :name => "Day of Atonement (Yom Kippur)", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+14 }, :function_id => "rosh_hashanah(year)+14", :name => "Sukkot", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+21 }, :function_id => "rosh_hashanah(year)+21", :name => "Shemini Atzeret", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+22 }, :function_id => "rosh_hashanah(year)+22", :name => "Simchat Torah", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.rosh_hashanah(year)+83 }, :function_id => "rosh_hashanah(year)+83", :name => "Chanukah", :regions => [:jewish]},
-            {:function => lambda { |year| Holidays.passover(year) }, :function_id => "passover(year)", :name => "Passover", :regions => [:jewish]}],
-      3 => [{:mday => 20, :name => "Festival of Lots (Purim)", :regions => [:jewish]}]
+      0 => [{:function => lambda { |year| Holidays.rosh_hashanah(year) }, :function_id => "rosh_hashanah(year)", :logic => "1st day of Tishrei", :name => "New Year (Rosh Hashanah)", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+9 }, :function_id => "rosh_hashanah(year)+9", :logic => "9th day after Rosh Hashanah", :name => "Day of Atonement (Yom Kippur)", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+14 }, :function_id => "rosh_hashanah(year)+14", :logic => "5th day after Yom Kippur", :name => "Sukkot", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+21 }, :function_id => "rosh_hashanah(year)+21", :logic => "22nd day of Tishrei", :name => "Shemini Atzeret", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+22 }, :function_id => "rosh_hashanah(year)+22", :logic => "23rd day of Tishrei", :name => "Simchat Torah", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.rosh_hashanah(year)+83 }, :function_id => "rosh_hashanah(year)+83", :logic => "25th day of Kislev", :name => "Chanukah", :regions => [:jewish]},
+            {:function => lambda { |year| Holidays.passover(year) }, :function_id => "passover(year)", :logic => "Day 15th of Nissan", :name => "Passover", :regions => [:jewish]}]
     }
   end
 

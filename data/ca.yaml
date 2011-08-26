@@ -6,6 +6,7 @@ months:
   - name: New Year's Day
     regions: [ca]
     mday: 1
+    logic: January 1st
   - name: New Year's
     regions: [ca_qc]
     mday: 2
@@ -31,9 +32,11 @@ months:
     week: 2
     regions: [ca]
     wday: 0
+    logic: 2nd Sunday in May
   - name: Victoria Day
     regions: [ca]
     function: ca_victoria_day(year)
+    logic: Monday before May 25th
   - name: National Patriotes Day
     regions: [ca_qc]
     function: ca_victoria_day(year)
@@ -42,6 +45,7 @@ months:
     week: 3
     regions: [ca]
     wday: 0
+    logic: 3rd Sunday in June
   - name: Discovery Day
     regions: [ca_nf]
     mday: 24
@@ -56,6 +60,7 @@ months:
     regions: [ca]
     mday: 1
     observed: to_monday_if_sunday
+    logic: Jult 1st
   - name: Orangemen's Day
     regions: [ca_nf]
     mday: 12
@@ -92,11 +97,13 @@ months:
     week: 1
     regions: [ca]
     wday: 1
+    logic: 1st Monday in September
   10: 
   - name: Thanksgiving
     week: 2
     regions: [ca]
     wday: 1
+    logic: 2nd Monday in October
 #  11: 
 #  - name: Remembrance Day
 #    regions: [ca]
@@ -105,6 +112,7 @@ months:
   - name: Boxing Day
     regions: [ca]
     mday: 26
+    logic: December 26th
 methods:
   ca_victoria_day: |
     # Monday on or before May 24

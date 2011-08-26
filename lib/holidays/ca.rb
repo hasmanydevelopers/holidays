@@ -15,18 +15,18 @@ module Holidays
     DEFINED_REGIONS = [:ca, :ca_qc, :ca_nf, :ca_nt, :ca_nu, :ca_ab, :ca_on, :ca_sk, :ca_mb, :ca_bc, :ca_ns, :ca_yk, :us]
 
     HOLIDAYS_BY_MONTH = {
-      5 => [{:wday => 0, :week => 2, :name => "Mother's Day", :regions => [:ca]},
-            {:function => lambda { |year| Holidays.ca_victoria_day(year) }, :function_id => "ca_victoria_day(year)", :name => "Victoria Day", :regions => [:ca]},
+      5 => [{:wday => 0, :week => 2, :logic => "2nd Sunday in May", :name => "Mother's Day", :regions => [:ca]},
+            {:function => lambda { |year| Holidays.ca_victoria_day(year) }, :function_id => "ca_victoria_day(year)", :logic => "Monday before May 25th", :name => "Victoria Day", :regions => [:ca]},
             {:function => lambda { |year| Holidays.ca_victoria_day(year) }, :function_id => "ca_victoria_day(year)", :name => "National Patriotes Day", :regions => [:ca_qc]},
             {:wday => 0, :week => 3, :type => :informal, :name => "Father's Day", :regions => [:us, :ca]}],
-      6 => [{:wday => 0, :week => 3, :name => "Father's Day", :regions => [:ca]},
+      6 => [{:wday => 0, :week => 3, :logic => "3rd Sunday in June", :name => "Father's Day", :regions => [:ca]},
             {:mday => 24, :name => "Discovery Day", :regions => [:ca_nf]},
             {:mday => 24, :name => "Fête Nationale", :regions => [:ca_qc]},
             {:mday => 21, :name => "National Aboriginal Day", :regions => [:ca_nt]}],
-      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:ca]},
+      1 => [{:mday => 1, :logic => "January 1st", :name => "New Year's Day", :regions => [:ca]},
             {:mday => 2, :name => "New Year's", :regions => [:ca_qc]}],
-      12 => [{:mday => 26, :name => "Boxing Day", :regions => [:ca]}],
-      7 => [{:mday => 1, :observed => lambda { |date| Holidays.to_monday_if_sunday(date) }, :observed_id => "to_monday_if_sunday", :name => "Canada Day", :regions => [:ca]},
+      12 => [{:mday => 26, :logic => "December 26th", :name => "Boxing Day", :regions => [:ca]}],
+      7 => [{:mday => 1, :observed => lambda { |date| Holidays.to_monday_if_sunday(date) }, :observed_id => "to_monday_if_sunday", :logic => "Jult 1st", :name => "Canada Day", :regions => [:ca]},
             {:mday => 12, :name => "Orangemen's Day", :regions => [:ca_nf]},
             {:mday => 9, :name => "Nunavut Day", :regions => [:ca_nu]}],
       2 => [{:wday => 1, :week => 3, :name => "Family Day", :regions => [:ca_ab, :ca_on, :ca_sk]},
@@ -41,10 +41,10 @@ module Holidays
             {:wday => 1, :week => 3, :name => "Discovery Day", :regions => [:ca_yk]}],
       3 => [{:mday => 23, :name => "St. George's Day", :regions => [:ca_nf]},
             {:mday => 17, :type => :informal, :name => "St. Patrick's Day", :regions => [:us, :ca]}],
-      9 => [{:wday => 1, :week => 1, :name => "Labour Day", :regions => [:ca]}],
+      9 => [{:wday => 1, :week => 1, :logic => "1st Monday in September", :name => "Labour Day", :regions => [:ca]}],
       4 => [{:mday => 1, :type => :informal, :name => "April Fool's Day", :regions => [:us, :ca]},
             {:mday => 22, :type => :informal, :name => "Earth Day", :regions => [:us, :ca]}],
-      10 => [{:wday => 1, :week => 2, :name => "Thanksgiving", :regions => [:ca]},
+      10 => [{:wday => 1, :week => 2, :logic => "2nd Monday in October", :name => "Thanksgiving", :regions => [:ca]},
             {:mday => 31, :type => :informal, :name => "Halloween", :regions => [:us, :ca]}]
     }
   end

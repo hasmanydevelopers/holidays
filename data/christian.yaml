@@ -6,19 +6,28 @@ months:
   - name: Easter Monday
     regions: [christian]
     function: easter(year)+1
+    logic: Day after Easter
+    
   - name: Good Friday
     regions: [christian]
     function: easter(year)-2
+    logic: Two days before Easter
+    
   - name: Easter Sunday
     regions: [christian]
     function: easter(year)
+    logic: Sunday after Paschal Full Moon
+    
   12:
   - name: Christmas Eve
     regions: [christian]
     mday: 25
+    logic: December 24th
+    
   - name: Christmas Day
     regions: [christian]
     mday: 25
+    logic: December 25th
     
 tests: |
     assert_equal 'Easter', Date.civil(2024, 04, 24).holidays(:cristian)[0][:name]

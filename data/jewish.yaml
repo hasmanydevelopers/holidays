@@ -6,35 +6,42 @@ months:
   - name: New Year (Rosh Hashanah)
     regions: [jewish]
     function: rosh_hashanah(year)
+    logic: 1st day of Tishrei
     
   - name: Day of Atonement (Yom Kippur)
     regions: [jewish]
     function: rosh_hashanah(year)+9
+    logic: 9th day after Rosh Hashanah
     
   - name: Sukkot
     regions: [jewish]
     function: rosh_hashanah(year)+14
+    logic: 5th day after Yom Kippur
     
   - name: Shemini Atzeret
     regions: [jewish]
     function: rosh_hashanah(year)+21
+    logic: 22nd day of Tishrei
     
   - name: Simchat Torah
     regions: [jewish]
     function: rosh_hashanah(year)+22
+    logic: 23rd day of Tishrei
     
   - name: Chanukah
     regions: [jewish]
     function: rosh_hashanah(year)+83
+    logic: 25th day of Kislev
 
   - name: Passover
     regions: [jewish]
     function: passover(year)
+    logic: Day 15th of Nissan
     
-  3:
-  - name: Festival of Lots (Purim)
-    regions: [jewish]
-    mday: 20
+#  3:
+#  - name: Festival of Lots (Purim)
+#    regions: [jewish]
+#    mday: 20
     
 tests: |
     assert_equal true, true

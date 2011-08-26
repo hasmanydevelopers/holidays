@@ -13,13 +13,15 @@
 --- 
 months:
   0:
-  - name: Mother's Day
+  - name: Mother's Day (Mothering Sunday)
     regions: [gb]
     function: easter(year)-21
+    logic: 4th Sunday in Lent
   1: 
   - name: New Year's Day
     regions: [gb]
     mday: 1
+    logic: January 1st
   - name: New Year's
     regions: [gb_sct]
     mday: 2
@@ -35,6 +37,7 @@ months:
     regions: [gb]
     week: 1
     wday: 1
+    logic: 1st Monday in May
   - name: Liberation Day
     regions: [je, gb_jsy, gg, gb_gsy]
     mday: 9
@@ -42,11 +45,13 @@ months:
     regions: [gb]
     week: -1
     wday: 1
+    logic: Last Monday in May
   6:
   - name: Father's Day
     week: 3
     regions: [gb]
     wday: 0
+    logic: 3rd Sunday in June
   7: 
   - name: Tynwald Day
     regions: [im, gb_iom]
@@ -73,6 +78,7 @@ months:
     regions: [gb]
     mday: 26
     observed: to_weekday_if_boxing_weekend
+    logic: December 26th
 tests: |
     {Date.civil(2008,1,1) => 'New Year\'s Day', 
      Date.civil(2008,5,5) => 'May Day',
