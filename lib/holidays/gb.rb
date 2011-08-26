@@ -12,24 +12,24 @@ module Holidays
   #
   # More definitions are available at http://code.dunae.ca/holidays.
   module GB # :nodoc:
-    DEFINED_REGIONS = [:gb, :gb_sct, :gb_con, :gb_nir, :je, :gb_jsy, :gg, :gb_gsy, :im, :gb_iom, :gb_eng, :gb_wls, :gb_eaw]
+    DEFINED_REGIONS = [:gb, :je, :gb_jsy, :gg, :gb_gsy, :gb_sct, :im, :gb_iom, :gb_nir, :gb_eng, :gb_wls, :gb_eaw, :gb_con]
 
     HOLIDAYS_BY_MONTH = {
-      0 => [{:function => lambda { |year| Holidays.easter(year)-21 }, :function_id => "easter(year)-21", :name => "Mother's Day", :regions => [:gb]}],
-      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:gb]},
-            {:mday => 2, :name => "New Year's", :regions => [:gb_sct]}],
-      3 => [{:mday => 5, :name => "St. Piran's Day", :regions => [:gb_con]},
-            {:mday => 17, :name => "St. Patrick's Day", :regions => [:gb_nir]}],
       5 => [{:wday => 1, :week => 1, :name => "May Day", :regions => [:gb]},
             {:mday => 9, :name => "Liberation Day", :regions => [:je, :gb_jsy, :gg, :gb_gsy]},
             {:wday => 1, :week => -1, :name => "Bank Holiday", :regions => [:gb]}],
+      0 => [{:function => lambda { |year| Holidays.easter(year)-21 }, :function_id => "easter(year)-21", :name => "Mother's Day", :regions => [:gb]}],
+      11 => [{:mday => 5, :type => :informal, :name => "Guy Fawkes Day", :regions => [:gb]}],
       6 => [{:wday => 0, :week => 3, :name => "Father's Day", :regions => [:gb]}],
+      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:gb]},
+            {:mday => 2, :name => "New Year's", :regions => [:gb_sct]}],
+      12 => [{:mday => 26, :observed => lambda { |date| Holidays.to_weekday_if_boxing_weekend(date) }, :observed_id => "to_weekday_if_boxing_weekend", :name => "Boxing Day", :regions => [:gb]}],
       7 => [{:mday => 5, :name => "Tynwald Day", :regions => [:im, :gb_iom]},
             {:mday => 12, :name => "Battle of the Boyne", :regions => [:gb_nir]}],
       8 => [{:wday => 1, :week => 1, :name => "Spring Bank Holiday", :regions => [:gb_sct]},
             {:wday => 1, :week => -1, :name => "Spring Bank Holiday", :regions => [:gb_eng, :gb_wls, :gb_eaw, :gb_nir]}],
-      11 => [{:mday => 5, :type => :informal, :name => "Guy Fawkes Day", :regions => [:gb]}],
-      12 => [{:mday => 26, :observed => lambda { |date| Holidays.to_weekday_if_boxing_weekend(date) }, :observed_id => "to_weekday_if_boxing_weekend", :name => "Boxing Day", :regions => [:gb]}]
+      3 => [{:mday => 5, :name => "St. Piran's Day", :regions => [:gb_con]},
+            {:mday => 17, :name => "St. Patrick's Day", :regions => [:gb_nir]}]
     }
   end
 
