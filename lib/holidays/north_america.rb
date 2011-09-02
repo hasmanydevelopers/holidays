@@ -75,7 +75,7 @@ module Holidays
             {:mday => 22, :type => :informal, :name => "Earth Day", :regions => [:us, :ca]}],
       10 => [{:wday => 1, :week => 2, :logic => "2nd Monday in October", :name => "Thanksgiving", :regions => [:ca]},
             {:mday => 12, :type => :informal, :name => "Día de la Raza", :regions => [:mx]},
-            {:wday => 1, :week => 2, :logic => "2nd Monday in October", :name => "Columbus Day / Indigenous People's Day", :regions => [:us]},
+            {:wday => 1, :week => 2, :logic => "2nd Monday in October", :name => "Columbus Day", :regions => [:us]},
             {:mday => 31, :logic => "October 31st", :name => "Halloween", :regions => [:us]},
             {:mday => 31, :type => :informal, :name => "Halloween", :regions => [:us, :ca]}]
     }

@@ -46,7 +46,7 @@ months:
     week: 3
     regions: [us]
     wday: 0
-    logic: 3rd Sunday in May
+    logic: 3rd Sunday in June
   7: 
   - name: Independence Day
     regions: [us]
@@ -60,7 +60,7 @@ months:
     wday: 1
     logic: 1st Monday in September
   10: 
-  - name: Columbus Day / Indigenous People's Day
+  - name: Columbus Day
     week: 2
     regions: [us]
     wday: 1

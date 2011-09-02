@@ -21,7 +21,7 @@ months:
   12:
   - name: Christmas Eve
     regions: [christian]
-    mday: 25
+    mday: 24
     logic: December 24th
     
   - name: Christmas Day
