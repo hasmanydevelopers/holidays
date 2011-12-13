@@ -15,26 +15,26 @@ module Holidays
     DEFINED_REGIONS = [:us, :ca]
 
     HOLIDAYS_BY_MONTH = {
-      5 => [{:wday => 0, :week => 2, :logic => "2nd Sunday in May", :name => "Mother's Day", :regions => [:us]},
-            {:wday => 1, :week => -1, :logic => "Last Monday of May", :name => "Memorial Day", :regions => [:us]},
-            {:wday => 0, :week => 3, :type => :informal, :name => "Father's Day", :regions => [:us, :ca]}],
-      11 => [{:wday => 4, :week => 4, :logic => "4th Thursday in November", :name => "Thanksgiving", :regions => [:us]}],
-      6 => [{:wday => 0, :week => 3, :logic => "3rd Sunday in June", :name => "Father's Day", :regions => [:us]}],
       1 => [{:mday => 1, :observed => lambda { |date| Holidays.to_weekday_if_weekend(date) }, :observed_id => "to_weekday_if_weekend", :logic => "January 1st", :name => "New Year's Day", :regions => [:us]},
             {:wday => 1, :week => 3, :logic => "3rd Monday in January", :name => "Martin Luther King, Jr. Day", :regions => [:us]}],
-      12 => [{:mday => 26, :logic => "December 26th to January 31st", :name => "Kwanzaa", :regions => [:us]},
-            {:mday => 31, :logic => "December 31st", :name => "New Year's Eve", :regions => [:us]}],
-      7 => [{:mday => 4, :observed => lambda { |date| Holidays.to_weekday_if_weekend(date) }, :observed_id => "to_weekday_if_weekend", :logic => "July 4th", :name => "Independence Day", :regions => [:us]}],
       2 => [{:wday => 1, :week => 3, :logic => "3rd Monday in February", :name => "Presidents' Day", :regions => [:us]},
             {:mday => 2, :type => :informal, :name => "Groundhog Day", :regions => [:us, :ca]},
             {:mday => 14, :type => :informal, :name => "Valentine's Day", :regions => [:us, :ca]}],
-      3 => [{:mday => 17, :type => :informal, :name => "St. Patrick's Day", :regions => [:us, :ca]}],
+      5 => [{:wday => 0, :week => 2, :logic => "2nd Sunday in May", :name => "Mother's Day", :regions => [:us]},
+            {:wday => 1, :week => -1, :logic => "Last Monday of May", :name => "Memorial Day", :regions => [:us]},
+            {:wday => 0, :week => 3, :type => :informal, :name => "Father's Day", :regions => [:us, :ca]}],
+      6 => [{:wday => 0, :week => 3, :logic => "3rd Sunday in June", :name => "Father's Day", :regions => [:us]}],
+      7 => [{:mday => 4, :observed => lambda { |date| Holidays.to_weekday_if_weekend(date) }, :observed_id => "to_weekday_if_weekend", :logic => "July 4th", :name => "Independence Day", :regions => [:us]}],
       9 => [{:wday => 1, :week => 1, :logic => "1st Monday in September", :name => "Labor Day", :regions => [:us]}],
-      4 => [{:mday => 1, :type => :informal, :name => "April Fool's Day", :regions => [:us, :ca]},
-            {:mday => 22, :type => :informal, :name => "Earth Day", :regions => [:us, :ca]}],
       10 => [{:wday => 1, :week => 2, :logic => "2nd Monday in October", :name => "Columbus Day", :regions => [:us]},
             {:mday => 31, :logic => "October 31st", :name => "Halloween", :regions => [:us]},
-            {:mday => 31, :type => :informal, :name => "Halloween", :regions => [:us, :ca]}]
+            {:mday => 31, :type => :informal, :name => "Halloween", :regions => [:us, :ca]}],
+      11 => [{:wday => 4, :week => 4, :logic => "4th Thursday in November", :name => "Thanksgiving", :regions => [:us]}],
+      12 => [{:mday => 26, :logic => "December 26th to January 31st", :name => "Kwanzaa", :regions => [:us]},
+            {:mday => 31, :logic => "December 31st", :name => "New Year's Eve", :regions => [:us]}],
+      3 => [{:mday => 17, :type => :informal, :name => "St. Patrick's Day", :regions => [:us, :ca]}],
+      4 => [{:mday => 1, :type => :informal, :name => "April Fool's Day", :regions => [:us, :ca]},
+            {:mday => 22, :type => :informal, :name => "Earth Day", :regions => [:us, :ca]}]
     }
   end
 

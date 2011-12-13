@@ -60,7 +60,7 @@ months:
     regions: [ca]
     mday: 1
     observed: to_monday_if_sunday
-    logic: July 1st
+    logic: Jult 1st
   - name: Orangemen's Day
     regions: [ca_nf]
     mday: 12
